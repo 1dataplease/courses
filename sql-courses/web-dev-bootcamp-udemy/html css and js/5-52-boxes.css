@@ -1,0 +1,49 @@
+/*5-52: positioning of elements - the box model*/
+/*layout- mv div top right, make a wide a, add space in img*/
+
+/*4 parts of every box*/
+/*content box - around visible content*/
+/*padding - distance from that to border*/
+/*border box - visible*/
+/*margin box - distance from next box, spacing b/w elements*/
+/*margin box - make 2 paragraphs further apart*/
+
+/*make a tic tac toe, empty boxes*/
+/*make a portfolio site*/
+
+p {
+/*content - change width and height of text */
+/* 1/2 of the body or page*/
+width: 50%;
+
+/*border*/
+border: 2px solid blue;
+
+/*padding*/
+padding-left: 40px;
+
+/*margin*/
+/*margin: 20px 40px 400px 70px;*/
+/*margin: 0 auto 0 auto;*/
+margin: 0 auto;
+
+}
+
+/*tic-tac-toe*/
+/*<!-- table w/ 3 rows, each row has 3 tds -->
+<!-- w+h are 100px -->
+<!-- top row has blank, left+right, blank  -->
+<!-- middle: top+bottom, left+right+top+bottom, top+bottom-->
+<!-- bottom has blank, left+right, blank -->*/
+
+td {width: 100px; height:100px;}
+
+td:nth-of-type(2)  { border-left: 1px solid black;
+					border-right: 1px solid black; }
+
+/*tr:nth-of-type(2) didnt work*/
+/*make class instead of id since we use it > 1*/
+.horizontal { 
+			border-top: 1px solid black;
+			border-bottom: 1px solid black; }
+

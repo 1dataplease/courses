@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery</title>
+</head>
+<body>
+
+
+<h1>header</h1>
+<ul>
+	<h3>155 - what is jquery</h3>
+	<input type="button" name="output_col" id="trigger">
+	<img src="test.jpg">
+
+	<li>fast/small/feature-rich js library (file w methods, properties)</li>
+	<li>html doc manupulation, animating, event handling easier</li>
+	<li>has categories like css, many methods</li>
+
+	<h3>156 - you might not need jquery</h3>
+
+	<li>on some features, ajax, jquery is shorter</li>
+	<li>fixes 'broken' dom api</li>
+	<li>takes care of differences in diff browsers</li>
+
+	<li>why not use it?</li>
+	<li>dom api has queryselector now - easier to use</li>
+	<li>doesnt do anything you cant do on your own</li>
+	<li>unnecessary or heavy</li>
+
+	<li>worth learning</li>
+	<li>dependent on jquery, some companiess dont use it</li>
+	<li>how jquery does things behind scenes</li>
+</ul>
+<br>
+157 - adding jquery
+download it, link locally (so can be offline for it to work)
+<br>
+
+	
+
+</body>
+
+<!-- link to the file locally -->
+<script type="text/javascript" src="lib/jquery-2.2.4.min.js"></script>
+
+<!-- in jquery dl, 2.1.4 
+	- compressed production .min.js
+		- no space, no name of props/args, no comments, shortnames, faster to load
+	- uncompressd development .js -->
+
+<!-- test it by typing jQuery or $ -->
+
+<!-- ex of jquery code -->
+<script type="text/javascript">
+	// when a user clicks the button with id 'trigger'
+	$('#trigger').click(function(){
+
+		// change the bodys background to yellow
+		$('body').css("background", "yellow");
+
+		// fade out all imgs for 3 seconds
+		$("img").fadeOut(3000, function(){
+
+			// remove the images from pg when fadeOut done
+			$(this).remove();
+		}); // close fadeout fxn
+	}); //close button fxn
+
+
+</script>
+
+</html>

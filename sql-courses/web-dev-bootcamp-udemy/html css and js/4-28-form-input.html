@@ -1,0 +1,96 @@
+<html>
+<head>
+	<title>Form Demo</title>
+</head>
+<body>
+<h1>Sign In</h1>
+
+<!-- if you dont specify a method, its a get request -->
+<!-- action specifies where the data goes -->
+<!-- give a name to each datum we send -->
+<!-- if action left blank, it sends data to where we are, and adds info to end of url -->
+<!-- if action=wiki, it goes to wiki, adds ?username=uname&password=pw -->
+<form action="http://wikipedia.com" method="get">
+	<input type="text">
+	<input type="email">
+	<input type="password">
+	<input type="date">
+	<!-- this button does nothing, has no text in it -->
+	<input type="button">
+	<input type="submit">
+	<input type="checkbox">
+	<input type="radio">
+	<button>Login</button><br><br>
+
+	<!-- actual login form -->
+	<!-- when you refresh page, since its get method, it adds ?username=typed_uname&password=typed_pw to end of html -->
+	<label>
+		Username: 
+		<input name="username" type="text" placeholder="username"></label>
+
+	<label>
+		Password: 
+		<input name = "password" type="password" placeholder="Password">
+	</label>
+
+	<input type="submit">
+<br><br>
+<!-- or we can do labels this other way -->
+<!-- presence validation -->
+<!-- data type validation - make sure email is correct format -->
+	<form action="/send-2-this-sign-in-url" method="post">
+		<label for = "username"> Username: </label>
+		<input id = "username" type="text" required>
+
+		<label for = "username"> email: </label>
+		<input id = "username" type="email" required>
+
+		<label for = "password"> Password: </label>
+		<input id = "password" type="password" required>
+	</form>
+</form>
+<!-- /form does start a new line -->
+
+<!-- radio - make only choose one -->
+<p>Do you prefer cats or dogs?</p>
+<form>
+	<label for="dogs">Dogs: </label>
+	<input name="petChoice" id="dogs" type="radio" value="dog1">
+
+	<label for="cats">Cats: </label>
+	<input name="petChoice" id="cats" type="radio" value="cat1">
+
+<!-- if button is last thing in form, it will submit the form -->
+	<!-- adds ?petChoice=on at end of page -->
+	<!-- need to also say what the value of this decision is -->
+	<!-- after adding a value, it says ?petChoice=dog1 -->
+
+<!-- select tag: create dropdown menus -->
+<p>how you feeling?</p>
+<!-- put every choice under an option tag -->
+<!-- need to put name in select: adds &color=green -->
+<select name="emotion">
+	<option value="happy">:)</option>
+	<option value="blah">:|</option>
+	<option value="sad">:(</option>
+</select>
+
+<!-- textarea: create inputs that are more than one line -->
+<p>Comments: </p>
+<textarea name="comments" rows="10" cols="30">
+</textarea>
+
+	<button>Go</button>
+</form>
+
+<!-- css: select+style elements by tag-name, class, id; use css inspector -->
+
+<!-- selector {
+	property: value;
+	property2: value;
+} -->
+
+
+
+</body>
+</html>

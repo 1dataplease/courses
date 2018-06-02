@@ -1,0 +1,46 @@
+<html>
+<head>
+	<title>inheritance specificity</title>
+	<style type="text/css">
+
+	/*all 3 of these are element or type selectors*/
+	/*if ul isnt given style, body colors everything in it*/
+	body {color: red;}
+
+	/*li inherited color from parent element ul*/
+	ul {color: purple;}
+
+	/*easy*/
+	li {color:orange;}
+
+	/*class selector*/
+	.highlight {color: yellow;}
+	/*also attribute selector*/
+	/*input[type="text"]{}*/
+	/*psuedo-class selectors*/
+	/*a:hover{}; input:checked;*/
+
+	/*id selector*/
+	#special {color:pink;}
+
+	/*and in-line style would overrule id*/
+
+	/*li takes style from body, then ul, li then class then id*/
+	/*the more specific one wins*/
+	/*specificity.keegan.st*/
+
+	</style>
+</head>
+<body>
+
+<p>Hii</p>
+
+<ul>
+	<li id="special" class="highlight">John</li>
+	<li>Paul</li>
+	<li>George</li>
+	<li class="highlight">Ringo</li>
+</ul>
+
+</body>
+</html>

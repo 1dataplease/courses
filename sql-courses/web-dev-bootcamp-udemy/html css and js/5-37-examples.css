@@ -1,0 +1,12 @@
+h1 {
+	color: purple;
+	font-size: 56px;
+}
+
+/*give all images a red border*/
+img {
+	border-color: red;
+	border-width: 3px;
+}
+
+/*where to write it? in-line or in own file? or in head of html*/

@@ -1,0 +1,104 @@
+<html>
+<head>
+	<title>Image Gallery</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="7-68-img-gallery.css">
+</head>
+<body>
+<!-- 2 - navbar, dont need to write in from scratch -->
+<!-- make sure its fixed -->
+<!-- inverse is blackish, looks better than grey -->
+<!-- our navbar -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+			<a href="#" class="navbar-brand">Gallery</a>
+		</div>
+		<div class="collapse navbar-collapse" id="bs-nav-demo">
+			<ul class="nav navbar-nav">
+				<li><a href="#">About</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#">Sign Up</a></li>
+				<li><a href="#">Login</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<!-- 1 - add in the big jumbotron, center it -->
+<div class="container">
+	<div class="jumbotron">
+		<h1><span class="glyphicon glyphicon-camera" aria-hidden="true"></span> 
+		The img gallery</h1>
+		<p>A bunch of pretty pictures that I did not take</p>
+	</div>
+
+<!-- 3 - set up grid - 3imgs,2,1 -->
+	<div class="row">
+		<div class= "col-lg-4 col-sm-6">
+			<div class="thumbnail">
+				<img src="#">
+			</div>
+		</div>
+		<div class= "col-lg-4 col-sm-6">
+			<div class="thumbnail">
+				<img src="#">
+			</div>
+		</div>
+		<div class= "col-lg-4 col-sm-6">
+			<div class="thumbnail">
+				<img src="#">
+			</div>
+		</div>
+		<div class= "col-lg-4 col-sm-6">
+			<div class="thumbnail">
+				<img src="#">
+			</div>
+		</div>
+		<div class= "col-lg-4 col-sm-6">
+			<div class="thumbnail">
+				<img src="#">
+			</div>
+		</div>
+		<div class= "col-lg-4 col-sm-6">
+			<div class="thumbnail">
+				<img src="#">
+			</div>
+		</div>
+		<div class= "col-lg-4 col-sm-6">
+			<div class="thumbnail">
+				<img src="#">
+			</div>
+		</div>
+		<div class= "col-lg-4 col-sm-6">
+			<div class="thumbnail">
+				<img src="#">
+			</div>
+		</div>
+		<div class= "col-lg-4 col-sm-6">
+			<div class="thumbnail">
+				<img src="#">
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- 4 add in the camera -->
+<!-- 6 make camera have spacing so its below navbar, not behind it: in stylesheet -->
+<!-- 5 make it fixed so navbar doesnt move down -->
+<!-- 7 - shade of blue in jumbotron -->
+<!-- 8 - turn links grey to white, cant do w a, navbar overrides it -->
+
+<!-- also need jquery and bootstrap js -->
+<script src="jquery-2.2.4.min.js"></script>
+<script src="bootstrap.js"></script>
+</body>
+</html>

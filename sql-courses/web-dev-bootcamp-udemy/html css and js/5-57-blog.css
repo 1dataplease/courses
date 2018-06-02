@@ -1,0 +1,58 @@
+/*border color: #bdc3c7;
+date color: #3498db;
+h2 color #2c3e50
+
+font: source sans pro;*/
+
+/*give the body a border, font, etc - h and p*/
+body {
+	border: 10px solid #bdc3c7;
+	
+	/*but it touches the quote+text. need PADDING*/
+	padding: 20px;
+	
+	/*need it to stay at 700px then scale when below it*/
+	max-width: 700px;
+	width: 80%;
+	
+	/*but now its on left, center it in middle*/
+	/*tried 0, but need some space at top*/
+	margin: 20px auto;
+	
+	/*the font*/
+	font-family: Source Sans Pro;
+}
+
+/*for posts*/
+.a_post {
+	margin-bottom: 20px;
+}
+
+/*quote*/
+.quote {
+	border-left: 5px solid #bdc3c7;
+	
+	/*need space b/w border and text - PADDING*/
+	padding-left: 5px;
+}
+
+.date {
+	color: #3498db;
+	text-transform: uppercase;
+
+	/*just like em, sets the date 10x as big*/
+	letter-spacing: .2rem;
+}
+
+/*make h2 bigger and dark blue*/
+h2 {
+	color: #2c3e50;
+
+	/*twice the size of everything else - 40px*/
+	font-size: 2.0rem;
+}
+
+/*make the horiz line less thick and trail off*/
+
+
+/*add a space b/w posts*/

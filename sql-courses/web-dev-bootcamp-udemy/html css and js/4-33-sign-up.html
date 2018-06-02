@@ -1,0 +1,81 @@
+<html>
+<head>
+	<title>Sign Up</title>
+</head>
+<body>
+<h2>Register</h2>
+<form>
+	<!-- not sure on what value 'name' element adds -->
+	<label for="firstName">First Name: </label>
+	<input name= "first" id= "firstName" type="text" placeholder="John" x>
+
+	<label for="lastName">Last Name: </label>
+	<input name="first" id= "lastName" type="text" placeholder="Smith" x>	
+	<!-- instead of a break, i can add a div for each line -->
+
+	<div>
+		<label for="male_id">Male</label>
+		<input name= "gender" id="male_id" type="radio" value="male" x>
+
+		<label for="female_id">Female</label>
+		<input name= "gender" id="female_id" type="radio" value="female">
+
+		<label for="other_id">Other</label>
+		<input name= "gender" id="other_id" type="radio" value="other">
+	</div>
+
+	<div>
+		<label>
+			Email: 
+			<!-- name is instrux how to send the data -->
+			<input name="email_name" type="email" placeholder="your email" x>
+		</label>
+
+		<!-- password length validation -->
+		<label>
+			Password: 
+			<input name="password" type="password" placeholder="your password" pattern=".{6,12}" required title="password must be between 6 and 12 characters">
+		</label>
+	</div>
+
+<!-- 	<label for="birthday_id">Birthday: </label>
+	<select name="date_name" type="date" id="birthday_id">
+	<select name="date_name" type="date" id="birthday_id">
+	<select name="date_name" type="date" id="birthday_id">
+	<br> -->
+	<div>
+		<label>
+			<!-- later: use js to generate all possible years to input -->
+			<select name="month">
+				<option>Month</option>
+				<option>Jan</option>
+				<option>Feb</option>
+				<option>Mar</option>
+			</select>
+			<select name="day">
+				<option>Day</option>
+				<option>10</option>
+				<option>11</option>
+				<option>12</option>
+			</select>
+			<select name="year">
+				<option>Year</option>
+				<option>1999</option>
+				<option>2000</option>
+				<option>2001</option>
+			</select>
+		</label>
+	</div>
+
+	<label>
+		I agree to the terms and conditions
+		<input type="checkbox" name="terms" id="terms_id" x>
+	</label>
+	<br>
+
+	<input type="submit">
+	
+</form>
+
+</body>
+</html>

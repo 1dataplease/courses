@@ -1,0 +1,65 @@
+/*1 - element selector - affects all of 1 tag*/
+body {
+background: orange;
+}
+
+li {
+	border: 2px solid red;
+}
+
+/*2 - id - single something out - target it, once per pg*/
+#important {
+	background: yellow;
+}
+
+/*3 - class - can do 1/2 one style, 1/2 another style*/
+.completed {
+	text-decoration: line-through;
+}
+
+/*4 - star selector - this applies to every element on pg*/
+* {
+	border: 1px solid lightgrey;
+}
+
+/*5 - descendant selector - takes 2+ tag names or selectors*/
+/*to select all anchor tags in li (not all anchor tags)*/
+ul li a{
+	color: green;
+}
+
+/*everything with class hello inside li*/
+/*li .hello*/
+
+/*6 - adjacent selector - select all elements after h4 */
+/*(has to be on same level)*/
+
+h4 + ul {
+	color: blue;
+}
+
+/*7 - attribute selector - anything that has href in it*/
+/*select all checkboxes, all pw fields, all imgs*/
+a[href="google.com"] {
+	background: pink;
+}
+
+/*select all text fields*/
+/*input[type="text"*/
+
+/*8 - nth of type - select every other or the 3rd of a li group*/
+
+/*changes every 3rd li in each group (doesnt overwrite id)*/
+li:nth-of-type(3){
+	background: purple;
+}
+
+/*this changes the 3rd list group*/
+ul:nth-of-type(3){
+	background: pink;
+}
+
+/*make every other li green*/
+li:nth-of-type(even){
+	background: green;
+}

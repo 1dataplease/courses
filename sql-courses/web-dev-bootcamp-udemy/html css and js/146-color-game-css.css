@@ -1,0 +1,38 @@
+body {
+	background-color: #232323;
+}
+
+/*responsive grid of imgs*/
+/*each takes up 30% of the container*/
+/*margin 1.66%*/
+/* 90 + 1.66*6 = 100%*/
+
+
+.square {
+	width: 30%;
+	background: purple;
+	/*divs are on page but empty*/
+	/*add in space*/
+	padding-bottom: 30%;
+	/*except they are on top of each other. move them right too*/
+	float: left;
+	/*results in massive purple grid. add margin*/
+	margin: 1.66%;
+	/* it takes up entire screen now*/
+	/*style the div with id of container - max width 600px*/
+}
+
+#container {
+	max-width: 600px;
+	/*auto makes it so its the same size on either side*/
+	/*0 is for the tops, auto the sides*/
+	/*creates a centered grid*/
+	margin: 0 auto;
+
+}
+
+/*h1 is hard to see/read, make white*/
+h1 {
+	color: white;
+}
+

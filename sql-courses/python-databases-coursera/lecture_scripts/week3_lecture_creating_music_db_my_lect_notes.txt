@@ -1,0 +1,157 @@
+
+##create artist, then genre, then album with artist id, the track table
+CREATE TABLE `Artist` (
+	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	`name`	TEXT
+);
+
+#genre table
+CREATE TABLE 'Genre' (
+'id' INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+'name' TEXT)
+
+#album table
+#id, name, artist_id (foreign key)
+
+CREATE TABLE Album (
+id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+artist_id INTEGER,
+title TEXT
+)
+
+#track table
+#id, title, album_id, genre_id, len, rating, count ((foreign keys))
+
+CREATE TABLE Track (
+id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+title TEXT,
+album_id INTEGER,
+genre_id INTEGER,
+len INTEGER, rating INTEGER, count INTEGER
+)
+
+#logical model -> physical model -> stmnts
+
+
+##Inserting Data into the tables
+
+insert into Artist (name) values ('Led Zepplin');
+insert into Artist (name) values ('AC/DC')
+
+insert into Genre (name) values ('Rock');
+insert into Genre (name) values ('Metal')
+
+insert into Album (title, artist_id) values ('Who Made Who',2);
+insert into Album (title, artist_id) values ('IV',1)
+
+insert into Track (title, rating, len, count, album_id, genre_id)
+values ('Black Dog', 5, 297, 0, 2, 1);
+insert into Track (title, rating, len, count, album_id, genre_id)
+values ('Stairway', 5, 482, 0, 2, 1);
+insert into Track (title, rating, len, count, album_id, genre_id)
+values ('About to Rock', 5, 313, 0, 1, 2);
+insert into Track (title, rating, len, count, album_id, genre_id)
+values ('Who Made Who', 5, 207, 0, 1, 2)
+
+##
+Relational power - by f+r replicated data w/ references to a single copy of each bit of data, we created a web. rdb can read thru very fast
+# when u want data, it comes from num of tables linked by foreign keys
+
+#Join
+
+- links across several tables
+
+- have to tell JOIN how to use the keys that make a connxn b/w tables using an ON clause
+
+select Album.title, Album.name from Artist
+join Artist on Album.artist_id = Artist.id
+
+select (what we want to see) from (table1 holding that data) join (table2)
+on (how the tables are linked)
+
+#run it to get albumName / artistName
+select Album.title, Artist.name from Album join Artist on Album.artist_id = Artist.id
+
+#run 2, gets album title, artistID, artistID, artistName
+select Album.title, Album.artist_id, Artist_id, Artist.id, Artist.name
+from Album join Artist
+on Album.artist_id = Artist.id
+
+#run3, get trackname, genrename
+select Track.title, Genre.name 
+from Track join Genre
+on Track.genre_id = Genre.id
+
+# if you dont have an on clause for the join, it makes all possible combos
+4*2 = 8 rows
+
+#complex
+#want the track title, artist name, album title, genre name
+select Track.title, Artist.name, Album.title, Genre.name
+from Tracks join Artist join Album join Genre
+on Track.genre_id = Genre.id and Track.album_id = Album.id and Track.artist_id = Artist.id
+
+## week 4
+#many to many relationships
+
+- one album, many tracks - foreign key on the one side
+- looks like a fork in a data model (one-to-many)
+
+- ex. many authors, many books (2-sided fork)
+		courses and users
+author-book junction table
+	membership table
+
+each connection has 1 row that connects 1 course to 1 user
+can make a composite key
+
+#create new database - user/course/member
+member has primary key (user_id, course_id) - it is unique combo
+
+CREATE TABLE Course (
+id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+title TEXT
+)
+
+
+CREATE TABLE `User` (
+	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE
+);
+ALTER TABLE User ADD name TEXT;
+ALTER TABLE User ADD email TEXT
+
+CREATE TABLE Member (
+user_id INTEGER,
+course_id INTEGER,
+role INTEGER,
+PRIMARY KEY (user_id, course_id)
+)
+
+#insert some data
+#they have autoincrement primary keys
+INSERT INTO User (name, email) VALUES ('Jane', 'jeane@tsugi.org');
+INSERT INTO User (name, email) VALUES ('Ed', 'ed@tsugi.org');
+INSERT INTO User (name, email) VALUES ('Sue', 'sue@tsugi.org');
+
+INSERT INTO Course (title) VALUES ('Python');
+INSERT INTO Course (title) VALUES ('SQL');
+INSERT INTO Course (title) VALUES ('PHP');
+
+#now we enter into member column
+INSERT INTO Member (user_id, course_id, role) VALUES (1,1,1);
+INSERT INTO Member (user_id, course_id, role) VALUES (2,1,0);
+INSERT INTO Member (user_id, course_id, role) VALUES (3,1,0);
+
+INSERT INTO Member (user_id, course_id, role) VALUES (1,2,0);
+INSERT INTO Member (user_id, course_id, role) VALUES (2,2,1);
+
+INSERT INTO Member (user_id, course_id, role) VALUES (2,3,1);
+INSERT INTO Member (user_id, course_id, role) VALUES (3,3,0);
+
+#lets get data out - showing name, role (student/teacher), title
+SELECT User.name, Member.role, Course.title
+FROM User JOIN Member JOIN Course
+ON Member.user_id = User.id AND Member.course_id = Course.id
+ORDER BY Course.title, Member.role DESC, User.name
+
+##vid 4-2

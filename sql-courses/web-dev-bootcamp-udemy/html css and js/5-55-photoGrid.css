@@ -1,0 +1,34 @@
+/*5-56*/
+/*whitespace is being added in between the imgs*/
+/*10% / 3 imgs / 2 sides per = 1.66*/
+img { 
+	width: 30%;
+	float: left;
+	margin: 1.66%;}
+
+/*need to move nm right - same amt as left of pic*/
+p {margin-left: 1.66%;
+font-size: 23px;
+font-weight: 800;
+text-transform: uppercase;
+/*need a small line, 30% of way across page*/
+/*is a border on the bottom of the paragraph*/
+border-bottom: 2px solid #f1f1f1;
+width: 30%;
+/*space b/w the p and border - add some padding*/
+padding-bottom: 20px;
+}
+
+
+/*float puts the divs next to each other on same line*/
+/*div {width: 100px;
+	float: left;
+}
+
+#one{
+	background-color: red;
+}
+
+#two{
+	background-color: purple;
+}

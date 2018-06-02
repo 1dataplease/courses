@@ -1,0 +1,43 @@
+/*css font stack - shows how many comps they are on*/
+
+/*font-family*/
+/*sometimes have to use quotes if fontname starst with #*/
+p {font-family: arial;}
+h1 {font-family: Georgia;}
+
+/*font-size*/
+/*font is usually 16px.*/
+body {font-size: 10px;}
+h1 {font-size: 5.0em;}
+p {font-size: 2.0em;}
+/*make the span 2x the size of the parent element paragrph (p)*/
+span {font-size: 2.0em;}
+
+
+/*font-weight*/
+/*how bold or thick the lines are*/
+p {font-weight: bold;}
+/*some fonts let u use the below*/
+/*p {font-weight: 100, 200, ... 800;}*/
+
+/*line-height*/
+/*the spacing between lines*/
+p {line-height: 1.5}
+
+/*text-align*/
+/*to center/left/right the h1*/
+h1 {text-align: right;}
+p {text-align: center;}
+
+/*text-decoration*/
+/*gives text an underline or line-through or overline*/
+h1 {text-decoration: underline;}
+p {text-decoration: line-through;}
+
+/*5-51: custom fonts*/
+/*some good ones missing, some not on some comps*/
+/*google.com/fonts has 100 good free ones, sortable*/
+/*every font+weight is another rqst, slows page*/
+/*copy the link, put it under the styles sheet*/
+
+/*can change h1 to Indie Flower or Railway*/

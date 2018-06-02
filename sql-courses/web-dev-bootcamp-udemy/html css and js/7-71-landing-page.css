@@ -1,0 +1,19 @@
+/*select div we added, id content, center it*/
+/*push it 25% down page*/
+#content {
+text-align: center;
+padding-top: 25%;}
+
+/*add background cat img, scale it down*/
+body {
+background: url(https://images.unsplash.com/photo-1313);
+background-size: cover;
+background-position: center;
+}
+
+/*h1, h3 {color:white;}*/
+
+h1 {
+font-weight: 700;
+font-size: 5em;
+}
